@@ -1,0 +1,10 @@
+body {
+    width: 100%;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    justify-content: center;
+}

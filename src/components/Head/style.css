@@ -1,0 +1,11 @@
+.head {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    font-size: 25px;
+    color: #fff;
+    background-color: rgba(29, 8, 36, 0.4);
+    padding: 15px 25px;
+}

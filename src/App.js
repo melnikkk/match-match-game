@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import StartPage from './components/StartPage';
-import Game from './components/Game';
-import './assets/styles/style.less'
+import Game from './components/Game'
 
 function App() {
-  const state = {
+  const defaultParam = {
     nickname: null,
-    gameStart: false,
     difficulty: null,
+    theme: 'gf',
   }
-  const [nickname, setNickname] = useState('player');
 
+  const [nickname, setNickname] = useState('player');
   const [difficulty, setDifficulty] = useState('12');
+  const [theme, setTheme] = useState('gf');
 
   const onDifficultyChange = (e) => {
     setDifficulty(e.target.value);
@@ -21,20 +21,33 @@ function App() {
     setNickname(e.target.value);
   }
 
-  const [gameParam, setGameParam] = useState(state)
+  const onThemeChange = (e) => {
+    setTheme(e.target.value);
+  }
+
+  const [gameParam, setGameParam] = useState(defaultParam);
+  const [gameStart, setGameStart] = useState(false);
 
   const onStartClick = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+
     setGameParam({
       nickname: nickname,
-      gameStart: true,
       difficulty: difficulty,
-    })
+      theme: theme,
+    });
+
+    setGameStart(true);
   }
   
   return (
-    <div className="the-game">
-      {gameParam.gameStart ? <Game gameParam={gameParam}/> : <StartPage onSubmit={onStartClick} onNicknameChange={onNicknameChange} nickname={nickname} onDifficultyChange={onDifficultyChange} difficulty={difficulty} />}
+    <div 
+    className="the-game"
+    style={{
+      backgroundImage: `url(/img/${theme}/main-bg.JPG)`
+    }}
+    >
+      {gameStart ? <Game gameParam={gameParam} /> : <StartPage onSubmit={onStartClick} onNicknameChange={onNicknameChange} nickname={nickname} onDifficultyChange={onDifficultyChange} difficulty={difficulty} onThemeChange={onThemeChange} theme={theme}/>}
     </div>
   );
 }
