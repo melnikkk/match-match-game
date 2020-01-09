@@ -4,7 +4,7 @@ import Head from '../Head'
 import GameOver from '../GameOver'
 import initializeDeck from '../../deck/deck'
 
-function Game({ gameParam }) {
+function Game({ gameParam, backToMenu }) {
     const [cards, setCards] = useState([]);
     const [flipped, setFlipped] = useState([]);
     const [dimension, setDimension] = useState(400);
@@ -99,9 +99,19 @@ function Game({ gameParam }) {
         return () => window.removeEventListener('resize', resizeListener);
     })
 
+    const onMenuClick = () => {
+        backToMenu()
+        onNewGameClick()
+    }
+
+    const onRestartClick = () => {
+        onNewGameClick();
+        setGameOver(false);
+    }
+
     return (
         <div className="game">
-            <Head nickname={gameParam.nickname} steps={steps} onNewGameClick={onNewGameClick}/>
+            <Head nickname={gameParam.nickname} steps={steps} onNewGameClick={onNewGameClick} onMenuClick={onMenuClick}/>
 
             <Board
                 dimension={dimension}
@@ -114,7 +124,7 @@ function Game({ gameParam }) {
                 difficulty={gameParam.difficulty}
             />
 
-            {gameOver ? <GameOver nickname={gameParam.nickname} steps={steps} difficulty={gameParam.difficulty }/> : ''}
+            {gameOver ? <GameOver nickname={gameParam.nickname} steps={steps} difficulty={gameParam.difficulty} onMenuClick={onMenuClick} onRestartClick={onRestartClick} /> : ''}
         </div>
     );
 }

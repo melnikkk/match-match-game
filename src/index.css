@@ -25,3 +25,26 @@ code {
   height: 100vh;
   background-size: cover;
 }
+
+button {
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.btn {
+  width: 110px;
+  height: 25px;
+  border-radius: 8px;
+  border: none;
+  border: 1px solid #000;
+  background-color: #57b664;
+}
+
+.btn:hover {
+  transform: scale(1.15);
+}
+
+.start-btn {
+  margin-top: 40px;
+}

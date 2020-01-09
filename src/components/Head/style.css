@@ -9,3 +9,11 @@
     background-color: rgba(29, 8, 36, 0.4);
     padding: 15px 25px;
 }
+
+.btn-block {
+    display: flex;
+}
+
+.btn-block .btn:first-child {
+    margin-right: 15px;
+}

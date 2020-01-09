@@ -39,6 +39,10 @@ function App() {
 
     setGameStart(true);
   }
+
+  const backToMenu = () => {
+    setGameStart(false)
+  }
   
   return (
     <div 
@@ -47,7 +51,7 @@ function App() {
       backgroundImage: `url(/img/${theme}/main-bg.JPG)`
     }}
     >
-      {gameStart ? <Game gameParam={gameParam} /> : <StartPage onSubmit={onStartClick} onNicknameChange={onNicknameChange} nickname={nickname} onDifficultyChange={onDifficultyChange} difficulty={difficulty} onThemeChange={onThemeChange} theme={theme}/>}
+      {gameStart ? <Game gameParam={gameParam} backToMenu={backToMenu} /> : <StartPage onSubmit={onStartClick} onNicknameChange={onNicknameChange} nickname={nickname} onDifficultyChange={onDifficultyChange} difficulty={difficulty} onThemeChange={onThemeChange} theme={theme}/>}
     </div>
   );
 }

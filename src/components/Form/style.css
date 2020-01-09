@@ -1,0 +1,44 @@
+input {
+    display: block;
+    cursor: pointer;
+}
+
+input[type='name'] {
+    border: 1px solid rgb(31, 146, 60);
+    width: 100%;
+    display: block;
+    height: 30px;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgba(209, 209, 209, .5);
+    margin-top: 25px;
+    text-align: center;
+    font-size: 18px;
+}
+
+input:focus {
+    outline: none;
+}
+
+label {
+    color: #fff;
+}
+
+.inputs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.input-block {
+    margin-top: 15px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nickname-label {
+    font-weight: bold;
+    font-size: 25px;
+}
