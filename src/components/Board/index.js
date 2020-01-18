@@ -14,8 +14,8 @@ function Board({ dimension, cards, flipped, handleClick, disabled, solved, theme
                     key={card.id}
                     type={card.type}
                     id={card.id}
-                    width={dimension / 6.5}
-                    height={dimension / 4.5}
+                    width={dimension / 7.8}
+                    height={dimension / 6.8}
                     flipped={flipped.includes(card.id)}
                     solved={solved.includes(card.id)}
                     handleClick={handleClick}

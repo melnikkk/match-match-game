@@ -13,7 +13,8 @@ function Card({handleClick, id, type, flipped, solved, height, width, disabled, 
             <div className='flipper'>
                 <img 
                     style={{
-                        width, height
+                        width,
+                        height
                     }}
                     className={flipped ? 'front' : 'back'}
                     src={flipped || solved ? `img/${theme}/${type}.png` : `img/${theme}/back.jpg`}
