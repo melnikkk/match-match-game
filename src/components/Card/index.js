@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css'
 
-function Card({handleClick, id, type, flipped, solved, height, width, disabled, theme}) {
+function Card({ handleClick, id, type, flipped, solved, height, width, disabled, theme }) {
     return (
         <div
             className={`flip-container ${flipped ? 'flipped' : ''}`}
@@ -11,7 +11,7 @@ function Card({handleClick, id, type, flipped, solved, height, width, disabled, 
             onClick={() => disabled ? null : handleClick(id)}
         >
             <div className='flipper'>
-                <img 
+                <img
                     style={{
                         width,
                         height
