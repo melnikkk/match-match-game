@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config webpack.dev.config.js",
-    "build": "webpack --config webpack.prod.config.js",
-    "lint": "eslint ./index.js ./containers/*.js ./components/**/*.js",
-    "lint:fix": "eslint --fix ./index.js ./containers/*.js ./components/**/*.js",
+    "build": "webpack --config webpack.prod.config.js"
   },
   "author": "Melnik Alexander",
   "license": "ISC",

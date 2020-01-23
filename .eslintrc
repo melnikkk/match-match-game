@@ -25,8 +25,9 @@
       "indent": ["error", 2],
       "object-curly-spacing": ["error", "always"],
       "no-extra-parens": "error",
-      "max-len": ["error", { "code": 100 }],
-      "no-multi-spaces": "error"
+      "max-len": ["error", { "code": 200 }],
+      "no-multi-spaces": "error",
+      "react/prop-types": 0
     },
     "settings": {
       "react": {
